@@ -1,0 +1,54 @@
+import { useEffect, useState } from 'react';
+import './App.css'
+import TitleCard from './components/TitleCard'
+import BMICard from './components/BMICard';
+import { staticAsset } from './libs';
+import ResultMeansCard from './components/ResultMeansCard';
+import RecommendationCard from './components/RecommendationCard';
+import EntryForm from './components/EntryForm';
+import WelcomeCard from './components/WelcomeCard';
+import LimitationCard from './components/LimitationCard';
+
+function App() {
+  const [bmi, setBMI] = useState<number>(NaN);
+  const [height, setHeight] = useState<number>(0);
+  const [weight, setWeight] = useState<number>(0);
+  const [measurementOption, setMeasurementOption] = useState<string>('metric');
+  const [formEmpty, setFormEmpty] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (bmi === bmi) {
+      setFormEmpty(false);
+    }
+  }, [bmi]);
+
+
+  return (
+    <main className='flex flex-col justify-center'>
+      <div className='flex flex-col items-center lg:flex-row'>
+        <div className='grad-bg flex flex-col items-center lg:items-start lg:flex-1/2 lg:gap-8'>
+          <img src={staticAsset('/images/logo.svg')} alt='logo' 
+            className='w-10 lg:mt-4'/>
+          <TitleCard />
+        </div>
+        <section className='entry-section bg-white rounded-xl lg:flex-1/2'>
+          <EntryForm 
+            setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}
+            measurementOption={measurementOption} setMeasurementOption={setMeasurementOption}
+            />
+          {
+            formEmpty ?
+              <WelcomeCard />
+              :
+              <BMICard bmi={bmi} weight={weight} height={height} option={measurementOption}/>
+          }
+        </section>
+      </div>
+      <ResultMeansCard />
+      <RecommendationCard />
+      <LimitationCard />
+    </main>
+  )
+}
+
+export default App
