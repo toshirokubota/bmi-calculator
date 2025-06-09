@@ -58,16 +58,3 @@ export function healthyWeightRange(height: number): number[] {
     return [18.5 * height2, 24.9 * height2 ];
 }
 
-// export function BMISummaryStatement(bmi: number, height: number, weight: number, option: string): string {
-//     console.log('BMISummaryStatement: ', bmi, height, weight, option);
-//     const range = healthyWeightRange(height);
-//     const summary = 
-//         'Your BMI suggests you’re ' + BMISummary(bmi) + '. ' +
-//         'Your ideal weight is between' + 
-//         (option === 'metric' ? range[0].toFixed(1) + 'kgs': metricWeight2ImperialWeightStr(range[0])) +
-//         '-' + 
-//         (option === 'metric' ? range[1].toFixed(1) + 'kgs': metricWeight2ImperialWeightStr(range[1])) +
-//         '.';
-//     ;
-//     return summary;
-// }

@@ -3,7 +3,7 @@ import { staticAsset } from "../libs";
 export default function LimitationCard() {
   return (
     <section className="limitation-section mt-4">
-      <div>
+      <div className='limitation-caption'>
         <h2 className="text-3xl text-gray-900 font-bold">Limitations of BMI</h2>
         <p className="text-center">
             Although BMI is often a practical indicator of healthy weight, it is not
@@ -13,8 +13,8 @@ export default function LimitationCard() {
         </p>
       </div>
 
-      <div className="limitation-card p-6 mb-2 bg-white rounded-lg">
-        <div className='flex flex-row items-center gap-4'>
+      <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
+        <div className='flex flex-row items-center gap-8'>
         <img src={staticAsset("/images/icon-gender.svg")} alt="gender icon" />
         <h4 className='text-xl text-slate-900'>Gender</h4>
         </div>
@@ -25,8 +25,8 @@ export default function LimitationCard() {
         </p>
       </div>
       <img src={staticAsset('/images/pattern-curved-line-right.svg')} alt=''
-        className="hidden lg:block"/>
-      <div className="limitation-card p-6 mb-2 bg-white rounded-lg">
+        className="curved-pattern hidden lg:block"/>
+      <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-age.svg")} alt="age icon" />
         <h4 className='text-xl text-slate-900'>Age</h4>
@@ -36,7 +36,7 @@ export default function LimitationCard() {
           to underestimate body fat content.
         </p>
       </div>
-      <div className="limitation-card p-6 mb-2 bg-white rounded-lg">
+      <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-muscle.svg")} alt="muscle icon" />
         <h4 className='text-xl text-slate-900'>Muscle</h4>
@@ -46,7 +46,7 @@ export default function LimitationCard() {
           doesn't differentiate muscle from fat.
         </p>
       </div>
-      <div className="limitation-card p-6 mb-2 bg-white rounded-lg">
+      <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img
           src={staticAsset("/images/icon-pregnancy.svg")}
@@ -60,7 +60,7 @@ export default function LimitationCard() {
           health risks for both mother and child.
         </p>
       </div>
-      <div className="limitation-card p-6 mb-2 bg-white rounded-lg">
+      <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-race.svg")} alt="race icon" />
         <h4 className='text-xl text-slate-900'>Race</h4>

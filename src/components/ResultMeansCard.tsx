@@ -6,7 +6,7 @@ export default function ResultMeansCard() {
       <img src={staticAsset('/images/image-man-eating.webp')} alt='man eating'/>
       <div>
         <img src={staticAsset('/images/pattern-curved-line-left.svg')} alt='' 
-            className="hidden ml-auto lg:block"/>
+            className="curved-pattern hidden ml-auto pr-12 lg:block"/>
         <h2 className="text-3xl text-gray-900">What your BMI result means</h2>
         <p className="text-gray-500 text-left">
             A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'

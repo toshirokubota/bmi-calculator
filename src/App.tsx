@@ -25,13 +25,13 @@ function App() {
 
   return (
     <main className='flex flex-col justify-center'>
-      <div className='flex flex-col items-center lg:flex-row'>
-        <div className='grad-bg flex flex-col items-center lg:items-start lg:flex-1/2 lg:gap-8'>
+      <div className='top-container flex flex-col'>
+        <div className='top-area grad-bg flex flex-col items-center lg:items-start'>
           <img src={staticAsset('/images/logo.svg')} alt='logo' 
             className='w-10 lg:mt-4'/>
           <TitleCard />
         </div>
-        <section className='entry-section bg-white rounded-xl lg:flex-1/2'>
+        <section className='entry-section bg-white rounded-xl'>
           <EntryForm 
             setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}
             measurementOption={measurementOption} setMeasurementOption={setMeasurementOption}

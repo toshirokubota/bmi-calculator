@@ -1,14 +1,11 @@
 $margin-inline-length: clamp(1.5rem, 14vw - 19px, 6rem);
-$negative-margin-inline: calc($margin-inline-length * -1);
 
 body {
-  background-color: var(--color-blue-50);
+  background-color: #F7F5FE; //var(--color-blue-50);
 }
 #root {
-  max-width: 65rem;
+  max-width: 90rem;
   margin: 0 auto;
-  //text-align: center;
-  margin-inline: $margin-inline-length;
   display: grid;
   place-content: center;
 }
@@ -18,27 +15,33 @@ main {
     margin-top: 2rem;
   }
 }
-
-section {
-  padding: 1.5rem;
+.top-container {
+  align-items: center;
+}
+.top-area {
+  padding-top: 2rem;
+  padding-inline: 1rem;
+  padding-bottom: 10rem;
+  margin-bottom: -10rem;
+  border-radius: 0 0 2rem 2rem;
+  text-align: center;
+  gap: 2rem;
 }
 .title-section{
-  background: linear-gradient(to right, rgba(214, 252, 254, 0), rgba(214, 230, 254, 1));
-  padding-bottom: 10rem;
-  //padding-inline: $margin-inline-length;
+  padding-block: 1rem;
+  padding-inline: $margin-inline-length;
   border-radius: 0 0 1rem 1rem;
-  //margin-inline: $negative-margin-inline;
-  //margin-bottom: -10rem;
+  gap: 2rem;
 }
 .entry-section {
-  margin-inline: 1rem;
-  padding-inline: 1rem;
+  margin-inline: $margin-inline-length;
+  margin-block: 1rem;
+  padding: 2rem;
 }
 .grad-bg {
   background: linear-gradient(to right, rgba(214, 252, 254, 0), rgba(214, 230, 254, 1));
 }
 .welcome-card, .result-card {
-  //bg-blue-500 rounded-lg text-white p-4
   background-color: var(--color-blue-500);
   border-radius: 1rem;
   color: white;
@@ -66,15 +69,37 @@ section {
   }
 }
 .result-means {
-  //background-color: #E7F5FE;
+  background-color: #F8F8F8; //#E7F5FE;
   & > img {
-    //margin-inline: $negative-margin-inline;
-    width: 100vw;
-    max-width: none;
-    object-fit: cover;
+    // width: 100vw;
+    // max-width: none;
+    object-fit: contain;
+    border-radius: 2rem;
+  }
+  h2, p {
+    margin: 1rem;
+    padding: 1rem;
   }
   & > * {
     margin-block: 1rem;
+  }
+}
+.recommendation-section {
+  //margin-inline: $margin-inline-length;
+  margin-block: 2rem;
+  padding: 2rem;
+}
+.limitation-section {
+  margin-inline: $margin-inline-length;
+  margin-block: 2rem;
+  .limitation-caption {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .limitation-card {
+    padding: 1rem;
+    box-shadow: 0px 5px 5px rgba(100,100,100,0.5);
   }
 }
 
@@ -95,6 +120,7 @@ section {
   }
   .result-means {
     gap: 4rem;
+    margin-left: -5rem;
     & > img {
       width: 50%;
     }
@@ -122,30 +148,69 @@ section {
   main {
     position: relative;
   }
+  .top-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    .top-area {
+      flex: 1 1 50%;
+      margin-left: $margin-inline-length;
+      padding-right: 10%;
+      text-align: left;
+      border-radius: 0 0rem 2rem 0;
+      padding-block: 5.5rem;
+
+      img {
+        margin-top: 2rem;
+      }
+    }
+    .entry-section {
+      flex: 1 1 50%;
+      margin-left: calc($margin-inline-length * -1);
+      margin-right: $margin-inline-length;
+      margin-block: 5.5rem;
+    }
+  }
+  // .top-area {
+  //   padding-left: 0rem;
+  //   padding-right: 12rem;
+  //   padding-bottom: 12rem;
+  //   margin-right: -12rem;
+  //   margin-left: $margin-inline-length;
+  //   margin-bottom: 1rem;
+  // }
   .title-section {
     //width: 66%;
-    padding-left: 0;
+    padding: 0;
     align-items: start;
     gap: 1rem;
+  }
+  // .entry-section {
+  //   margin-top: 0;
+  //   margin-left: 0;
+  // }
+  .result-means {
+    margin-left: 0;
   }
 
   .recommendation-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 0 2rem 2rem 0;
   }
   .limitation-section {
-    //justify-content: center;
     div:first-child {
-      width: 40%;
+      width: 60%;
     }
     .limitation-card {
       width: 35%;
     }
-    img {
+    .curved-pattern {
       display: block;
       margin-inline: 3rem;
+      align-self: start;
+      margin-top: -1rem;
     }
   }
-
 }   
