@@ -1,7 +1,7 @@
 import { BMISummary, healthyWeightRange, metricWeight2ImperialWeightStr } from "../libs";
 
-export default function BMICard({bmi, height, weight, option}: 
-    {bmi: number, height: number, weight: number, option: string}) {
+export default function BMICard({bmi, height, option}: 
+    {bmi: number, height: number, option: string}) {
         const summary: string = bmi === bmi ? 'Your BMI suggests you’re ' + BMISummary(bmi) + '. ': '';
         let weightSummary: React.JSX.Element = <></>;
         if(height === height) {

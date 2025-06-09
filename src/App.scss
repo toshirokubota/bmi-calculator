@@ -1,7 +1,7 @@
 $margin-inline-length: clamp(1.5rem, 14vw - 19px, 6rem);
 
 body {
-  background-color: #F7F5FE; //var(--color-blue-50);
+  background-color: transparent;
 }
 #root {
   max-width: 90rem;
@@ -37,6 +37,7 @@ main {
   margin-inline: $margin-inline-length;
   margin-block: 1rem;
   padding: 2rem;
+  box-shadow: 15px 15px 25px rgba(225, 239, 254, 0.25);
 }
 .grad-bg {
   background: linear-gradient(to right, rgba(214, 252, 254, 0), rgba(214, 230, 254, 1));
@@ -69,10 +70,7 @@ main {
   }
 }
 .result-means {
-  background-color: #F8F8F8; //#E7F5FE;
   & > img {
-    // width: 100vw;
-    // max-width: none;
     object-fit: contain;
     border-radius: 2rem;
   }
@@ -85,7 +83,6 @@ main {
   }
 }
 .recommendation-section {
-  //margin-inline: $margin-inline-length;
   margin-block: 2rem;
   padding: 2rem;
 }
@@ -99,8 +96,42 @@ main {
   }
   .limitation-card {
     padding: 1rem;
-    box-shadow: 0px 5px 5px rgba(100,100,100,0.5);
+    box-shadow: 15px 15px 25px rgba(225, 239, 254, 0.25);
   }
+}
+input:focus, input:hover {
+  cursor: pointer;
+}
+input[type='text']:hover, input[type='text']:focus {
+  border-color: var(--color-blue-500);
+}
+input[type="radio"] {
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #000; 
+  background-color: transparent;
+  position: relative;
+}
+input[type='radio']:checked {
+  border: none;
+  background-color: var(--color-blue-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="radio"]:checked::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-blue-500); 
+}
+input[type='radio']:hover, input[type='radio']:focus {
+  border-color: var(--color-blue-500);
 }
 
 @media only screen and (min-width: 40rem) {
@@ -171,24 +202,11 @@ main {
       margin-block: 5.5rem;
     }
   }
-  // .top-area {
-  //   padding-left: 0rem;
-  //   padding-right: 12rem;
-  //   padding-bottom: 12rem;
-  //   margin-right: -12rem;
-  //   margin-left: $margin-inline-length;
-  //   margin-bottom: 1rem;
-  // }
   .title-section {
-    //width: 66%;
     padding: 0;
     align-items: start;
     gap: 1rem;
   }
-  // .entry-section {
-  //   margin-top: 0;
-  //   margin-left: 0;
-  // }
   .result-means {
     margin-left: 0;
   }

@@ -12,7 +12,7 @@ import LimitationCard from './components/LimitationCard';
 function App() {
   const [bmi, setBMI] = useState<number>(NaN);
   const [height, setHeight] = useState<number>(0);
-  const [weight, setWeight] = useState<number>(0);
+  const [_weight, setWeight] = useState<number>(0);
   const [measurementOption, setMeasurementOption] = useState<string>('metric');
   const [formEmpty, setFormEmpty] = useState<boolean>(true);
 
@@ -27,7 +27,7 @@ function App() {
     <main className='flex flex-col justify-center'>
       <div className='top-container flex flex-col'>
         <div className='top-area grad-bg flex flex-col items-center lg:items-start'>
-          <img src={staticAsset('/images/logo.svg')} alt='logo' 
+          <img src={staticAsset('/images/logo.svg')} alt='bmi calculator logo' 
             className='w-10 lg:mt-4'/>
           <TitleCard />
         </div>
@@ -38,9 +38,13 @@ function App() {
             />
           {
             formEmpty ?
-              <WelcomeCard />
+              <div aria-hidden={!formEmpty}>
+                <WelcomeCard />
+              </div>
               :
-              <BMICard bmi={bmi} weight={weight} height={height} option={measurementOption}/>
+              <div aria-hidden={formEmpty}>
+                <BMICard bmi={bmi} height={height} option={measurementOption}/>
+              </div>
           }
         </section>
       </div>

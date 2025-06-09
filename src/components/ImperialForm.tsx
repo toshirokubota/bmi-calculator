@@ -47,33 +47,34 @@ export default function ImperialForm({setBMI, setHeight, setWeight}:
 
     return (
         <div className='imperial-form'>
-            <label htmlFor="height-feet" className="text-sm text-gray-600 text-left block">Height</label>
-            <div className="flex flex-row gap-4">
-            <div className="input-wrapper">
-            <input 
-                type='text' 
-                id='height-feet'
-                value={heightInputFeet} 
-                name='height-feet'
-                onChange={changeHandler}
-            />
-            <span>ft</span>
+            <label htmlFor="height-feet" className="text-sm text-gray-600 text-left block">Height<span className="sr-only"> feet</span></label>
+            <div className="flex flex-row items-center gap-4 mb-4">
+                <div className="input-wrapper">
+                <input 
+                    type='text' 
+                    id='height-feet'
+                    value={heightInputFeet} 
+                    name='height-feet'
+                    onChange={changeHandler}
+                />
+                <span>ft</span>
+                </div>
+
+                <label htmlFor="height-inch" className="sr-only">Height inches</label>
+                <div className="input-wrapper">
+                <input 
+                    type='text' 
+                    id='height-inch'
+                    value={heightInputInch} 
+                    name='height-inch'
+                    onChange={changeHandler}
+                />
+                <span>in</span>
+                </div>
             </div>
 
-            <div className="input-wrapper">
-            <input 
-                type='text' 
-                id='height-inch'
-                value={heightInputInch} 
-                name='height-inch'
-                onChange={changeHandler}
-            />
-            <span>in</span>
-            </div>
-            </div>
-
-            <label htmlFor="weight-st" className="text-sm text-gray-600 text-left block">Weight</label>
-            <div className="flex flex-row gap-4">
+            <label htmlFor="weight-stone" className="text-sm text-gray-600 text-left block">Weight <span className="sr-only">stones</span></label>
+            <div className="flex flex-row gap-4 mb-4">
             <div className="input-wrapper">
             <input 
                 type='text' 
@@ -85,6 +86,7 @@ export default function ImperialForm({setBMI, setHeight, setWeight}:
             <span>st</span>
             </div>
 
+            <label htmlFor="weight-lbs" className="sr-only">Weight lbs</label>
             <div className="input-wrapper">
             <input 
                 type='text' 

@@ -34,7 +34,7 @@ export default function MetricForm({setBMI, setHeight, setWeight}:
     }
     return (
         <div className='metric-form flex flex-col'>
-            <div className='flex flex-col items-start my-4'>
+            <div className='flex flex-col items-start mb-4'>
                 <label htmlFor="height-cm" className="text-sm text-gray-600 text-left">Height</label>
                 <div className="input-wrapper">
                     <input 
@@ -48,7 +48,7 @@ export default function MetricForm({setBMI, setHeight, setWeight}:
                     <span>cm</span>
                 </div>
             </div>
-            <div className='flex flex-col items-start my-4'>
+            <div className='flex flex-col items-start mb-4'>
                 <label htmlFor="weight-kg" className="text-sm text-gray-600 text-left">Weight</label>
                 <div className="input-wrapper">
                     <input 

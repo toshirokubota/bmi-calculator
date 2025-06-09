@@ -21,10 +21,10 @@ export default function EntryForm({setBMI, setHeight, setWeight,
     }
 
     return (
-        <form className="p-4">
-            <h2 className="text-2xl">Enter your details below</h2>
-            <div className='flex items-center justify-around'>
-                <div>
+        <form>
+            <h2 className="text-2xl font-semibold mb-4">Enter your details below</h2>
+            <div className='flex flex-row items-center gap-4 mb-4'>
+                <div className="w-1/2 flex items-center gap-2">
                     <input 
                         type='radio' 
                         id='metric-radio' 
@@ -35,23 +35,27 @@ export default function EntryForm({setBMI, setHeight, setWeight,
                     />
                     <label htmlFor="metric-radio">Metric</label>
                 </div>
-                <div>
+                <div className="w-1/2 flex items-center gap-2">
                     <input 
                         type='radio' 
-                        id='metric-radio' 
+                        id='imperial-radio' 
                         name='measure-options' 
                         value='imperial'
                         checked={measurementOption === 'imperial'}
                         onChange={handleChange}
                     />
-                    <label htmlFor="metric-radio">Imperial</label>
+                    <label htmlFor="imperial-radio">Imperial</label>
                 </div>
             </div>
 
             {measurementOption === 'metric' ? 
-                <MetricForm setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}/> 
+                <div aria-hidden={measurementOption !== 'metric'}>
+                    <MetricForm setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}/> 
+                </div>
                 :
-                <ImperialForm setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}/>
+                <div aria-hidden={measurementOption === 'metric'}>
+                    <ImperialForm setBMI={setBMI} setHeight={setHeight} setWeight={setWeight}/>
+                </div>
             }
         </form>
     )

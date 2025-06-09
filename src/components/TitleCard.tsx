@@ -1,4 +1,3 @@
-import { staticAsset } from "../libs";
 
 export default function TitleCard() {
     return (

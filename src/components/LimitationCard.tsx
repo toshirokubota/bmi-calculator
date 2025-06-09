@@ -4,7 +4,7 @@ export default function LimitationCard() {
   return (
     <section className="limitation-section mt-4">
       <div className='limitation-caption'>
-        <h2 className="text-3xl text-gray-900 font-bold">Limitations of BMI</h2>
+        <h2 className="text-3xl text-gray-900 font-semibold">Limitations of BMI</h2>
         <p className="text-center">
             Although BMI is often a practical indicator of healthy weight, it is not
             suited for every person. Specific groups should carefully consider their
@@ -16,7 +16,7 @@ export default function LimitationCard() {
       <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-8'>
         <img src={staticAsset("/images/icon-gender.svg")} alt="gender icon" />
-        <h4 className='text-xl text-slate-900'>Gender</h4>
+        <h4 className='text-xl font-semibold text-slate-900'>Gender</h4>
         </div>
         <p className='text-gray-500 text-left'>
           The development and body fat composition of girls and boys vary with
@@ -29,7 +29,7 @@ export default function LimitationCard() {
       <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-age.svg")} alt="age icon" />
-        <h4 className='text-xl text-slate-900'>Age</h4>
+        <h4 className='text-xl font-semibold text-slate-900'>Age</h4>
         </div>
         <p className='text-gray-500 text-left'>
           In aging individuals, increased body fat and muscle loss may cause BMI
@@ -39,7 +39,7 @@ export default function LimitationCard() {
       <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-muscle.svg")} alt="muscle icon" />
-        <h4 className='text-xl text-slate-900'>Muscle</h4>
+        <h4 className='text-xl font-semibold text-slate-900'>Muscle</h4>
         </div>
         <p className='text-gray-500 text-left'>
           BMI may misclassify muscular individuals as overweight or obese, as it
@@ -52,7 +52,7 @@ export default function LimitationCard() {
           src={staticAsset("/images/icon-pregnancy.svg")}
           alt="pregnancy icon"
         />
-        <h4 className='text-xl text-slate-900'>Pregnancy</h4>
+        <h4 className='text-xl font-semibold text-slate-900'>Pregnancy</h4>
         </div>
         <p className='text-gray-500 text-left'>
           Expectant mothers experience weight gain due to their growing baby.
@@ -63,7 +63,7 @@ export default function LimitationCard() {
       <div className="limitation-card flex flex-col gap-6 p-6 mb-4 bg-white rounded-lg">
         <div className='flex flex-row items-center gap-4'>
         <img src={staticAsset("/images/icon-race.svg")} alt="race icon" />
-        <h4 className='text-xl text-slate-900'>Race</h4>
+        <h4 className='text-xl font-semibold text-slate-900'>Race</h4>
         </div>
         <p className='text-gray-500 text-left'>
           Certain health concerns may affect individuals of some Black and Asian

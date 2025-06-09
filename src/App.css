@@ -1,5 +1,5 @@
 body {
-  background-color: #F7F5FE;
+  background-color: transparent;
 }
 
 #root {
@@ -38,6 +38,7 @@ main > * + * {
   margin-inline: clamp(1.5rem, 14vw - 19px, 6rem);
   margin-block: 1rem;
   padding: 2rem;
+  box-shadow: 15px 15px 25px rgba(225, 239, 254, 0.25);
 }
 
 .grad-bg {
@@ -73,9 +74,6 @@ main > * + * {
   color: var(--color-blue-700);
 }
 
-.result-means {
-  background-color: #F8F8F8;
-}
 .result-means > img {
   object-fit: contain;
   border-radius: 2rem;
@@ -104,7 +102,47 @@ main > * + * {
 }
 .limitation-section .limitation-card {
   padding: 1rem;
-  box-shadow: 0px 5px 5px rgba(100, 100, 100, 0.5);
+  box-shadow: 15px 15px 25px rgba(225, 239, 254, 0.25);
+}
+
+input:focus, input:hover {
+  cursor: pointer;
+}
+
+input[type=text]:hover, input[type=text]:focus {
+  border-color: var(--color-blue-500);
+}
+
+input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: transparent;
+  position: relative;
+}
+
+input[type=radio]:checked {
+  border: none;
+  background-color: var(--color-blue-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=radio]:checked::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-blue-500);
+}
+
+input[type=radio]:hover, input[type=radio]:focus {
+  border-color: var(--color-blue-500);
 }
 
 @media only screen and (min-width: 40rem) {
