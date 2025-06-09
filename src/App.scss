@@ -1,5 +1,5 @@
 $margin-inline-length: clamp(1.5rem, 14vw - 19px, 6rem);
-
+//$header-font-size: clamp(48px, 2.2vw + 40px, 64px);
 body {
   background-color: transparent;
 }
@@ -32,6 +32,12 @@ main {
   padding-inline: $margin-inline-length;
   border-radius: 0 0 1rem 1rem;
   gap: 2rem;
+
+  h1 {
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -5%;
+  }
 }
 .entry-section {
   margin-inline: $margin-inline-length;
@@ -46,7 +52,10 @@ main {
   background-color: var(--color-blue-500);
   border-radius: 1rem;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
+  & > * + *{
+    margin-top: 1rem;
+  }
 }
 .input-wrapper {
   position: relative;
@@ -182,7 +191,7 @@ input[type='radio']:hover, input[type='radio']:focus {
   .top-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: end;
     .top-area {
       flex: 1 1 50%;
       margin-left: $margin-inline-length;
@@ -199,16 +208,22 @@ input[type='radio']:hover, input[type='radio']:focus {
       flex: 1 1 50%;
       margin-left: calc($margin-inline-length * -1);
       margin-right: $margin-inline-length;
-      margin-block: 5.5rem;
+      //margin-block: 5.5rem;
     }
   }
   .title-section {
     padding: 0;
     align-items: start;
-    gap: 1rem;
+    gap: 2rem;
+    padding-block: 4.5rem;
+    h1 {
+      font-size: 64px;
+      letter-spacing: normal;
+    }
   }
   .result-means {
     margin-left: 0;
+    margin-top: 10rem;
   }
 
   .recommendation-section {
